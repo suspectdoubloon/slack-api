@@ -1,0 +1,20 @@
+{
+  "name": "suspectdoubloon/slack-api",
+  "description": "PHP wrapper for the Slack Events API and some other things I find necessary for my project",
+  "type": "library",
+  "authors": [
+    {
+      "name": "Jarrad Littleford",
+      "email": "jarrad@madeinkatana.com"
+    }
+  ],
+  "minimum-stability": "dev",
+  "require": {
+    "guzzlehttp/guzzle": "~6.0@dev"
+  },
+  "autoload": {
+    "psr-4": {
+      "SuspectDoubloon\\Slack\\": "src/"
+    }
+  }
+}

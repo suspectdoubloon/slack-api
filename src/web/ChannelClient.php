@@ -224,6 +224,21 @@ class ChannelClient extends AbstractClient
     }
 
 
+    /**
+     * @param $channel
+     * @param $thread_ts
+     * @return mixed
+     */
+    public function replies($channel, $thread_ts){
+        $endpoint = $this->endpoint . 'replies';
+        $parameters = ['query' => [
+            'channel' => $channel,
+            'thread_ts' => $thread_ts
+        ]];
+        $res = $this->client->request('GET', $endpoint, $parameters);
+        return json_decode((string)$res->getBody());
+    }
+
     public function unarchive($channel){
         $endpoint = $this->endpoint . '.unarchive';
         $parameters = ['query' => [

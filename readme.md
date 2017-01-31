@@ -8,8 +8,8 @@ as I go along and when I need them in my own projects. So use at your own risk.
 
 ##What has been implemented
 Currently I have implemented the methods under the following headers found in the 
-[Slack Api documentation](https://api.slack.com/methods). The following are located under
-the `web` namespace.
+[Slack Api documentation](https://api.slack.com/methods).
+####`Web` Namespace
  - API
  - Auth
  - Bots
@@ -18,8 +18,7 @@ the `web` namespace.
  - Group
  - IM
  - Users
- 
- Methods located under the `auth` namespace
+ ####`Auth` Namespace
  - OAuth
  
  ##Including in your project 

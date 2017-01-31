@@ -24,8 +24,8 @@ Currently I have implemented the methods under the following headers found in th
  - OAuth
  
  
- ##Including in your project 
- `composer require suspectdoubloon/slack-api`
+##Including in your project 
+`composer require suspectdoubloon/slack-api`
 
 and don't forget to include the autoload file in your project
 

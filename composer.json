@@ -2,10 +2,11 @@
   "name": "suspectdoubloon/slack-api",
   "description": "PHP wrapper for the Slack Events API and some other things I find necessary for my project",
   "type": "library",
+  "license": "MIT",
   "authors": [
     {
       "name": "Jarrad Littleford",
-      "email": "jarrad@madeinkatana.com"
+      "email": "jarrad.littleford@protonmail.com"
     }
   ],
   "minimum-stability": "dev",

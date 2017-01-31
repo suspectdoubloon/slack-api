@@ -17,6 +17,7 @@ Currently I have implemented the methods under the following headers found in th
  - Chat
  - Group
  - IM
+ - MPIM
  - Users
  
  

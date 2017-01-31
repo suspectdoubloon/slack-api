@@ -19,7 +19,8 @@ Currently I have implemented the methods under the following headers found in th
  - IM
  - Users
  
- ####`Auth` Namespace
+ 
+ #### `Auth` Namespace
  - OAuth
  
  ##Including in your project 

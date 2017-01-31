@@ -18,6 +18,7 @@ Currently I have implemented the methods under the following headers found in th
  - Group
  - IM
  - Users
+ 
  ####`Auth` Namespace
  - OAuth
  

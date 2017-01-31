@@ -38,14 +38,14 @@ class ChannelClient extends AbstractClient
 
     /**
      * @param $channel
-     * @param string $latest
-     * @param int $oldest
+     * @param float $latest
+     * @param float $oldest
      * @param int $inclusive
      * @param int $count
      * @param int $unreads
      * @return mixed
      */
-    public function history($channel, $latest = 'now', $oldest = 0, $inclusive = 0, $count = 100, $unreads = 1)
+    public function history($channel, $latest = 0.0, $oldest = 0.0, $inclusive = 0, $count = 100, $unreads = 1)
     {
         $endpoint = $this->endpoint . '.history';
         $parameters = ['query' => [

@@ -18,7 +18,7 @@ class ChannelClient extends AbstractClient
             'channel' => $channel
         ]];
         $res = $this->client->request('GET', $endpoint, $parameters);
-        return json_decode((string)$res->getBody());
+        return $this->resolve($res);
     }
 
     /**
@@ -33,7 +33,7 @@ class ChannelClient extends AbstractClient
             'name' => $name
         ]];
         $res = $this->client->request('GET', $endpoint, $parameters);
-        return json_decode((string)$res->getBody());
+        return $this->resolve($res);
     }
 
     /**
@@ -58,7 +58,7 @@ class ChannelClient extends AbstractClient
             'unreads' => $unreads
         ]];
         $res = $this->client->request('GET', $endpoint, $parameters);
-        return json_decode((string)$res->getBody());
+        return $this->resolve($res);
     }
 
     /**
@@ -73,7 +73,7 @@ class ChannelClient extends AbstractClient
             'channel' => $channel
         ]];
         $res = $this->client->request('GET', $endpoint, $parameters);
-        return json_decode((string)$res->getBody());
+        return $this->resolve($res);
     }
 
     /**
@@ -90,7 +90,7 @@ class ChannelClient extends AbstractClient
             'user' => $user
         ]];
         $res = $this->client->request('GET', $endpoint, $parameters);
-        return json_decode((string)$res->getBody());
+        return $this->resolve($res);
     }
 
     /**
@@ -105,7 +105,7 @@ class ChannelClient extends AbstractClient
             'name' => $name
         ]];
         $res = $this->client->request('GET', $endpoint, $parameters);
-        return json_decode((string)$res->getBody());
+        return $this->resolve($res);
     }
 
     /**
@@ -122,7 +122,7 @@ class ChannelClient extends AbstractClient
             'user' => $user
         ]];
         $res = $this->client->request('GET', $endpoint, $parameters);
-        return json_decode((string)$res->getBody());
+        return $this->resolve($res);
     }
 
     /**
@@ -137,7 +137,7 @@ class ChannelClient extends AbstractClient
             'channel' => $channel,
         ]];
         $res = $this->client->request('GET', $endpoint, $parameters);
-        return ((string)$res->getBody());
+        return $this->resolve($res);
     }
 
     /**
@@ -152,7 +152,7 @@ class ChannelClient extends AbstractClient
         ]];
         if (!is_null($exclude_archived)) $parameters['query']['exclude_archived'] = $exclude_archived;
         $res = $this->client->request('GET', $endpoint, $parameters);
-        return json_decode((string)$res->getBody());
+        return $this->resolve($res);
     }
 
     /**
@@ -169,7 +169,7 @@ class ChannelClient extends AbstractClient
             'ts' => $ts
         ]];
         $res = $this->client->request('GET', $endpoint, $parameters);
-        return json_decode((string)$res->getBody());
+        return $this->resolve($res);
     }
 
     /**
@@ -186,7 +186,7 @@ class ChannelClient extends AbstractClient
             'name' => $name
         ]];
         $res = $this->client->request('GET', $endpoint, $parameters);
-        return json_decode((string)$res->getBody());
+        return $this->resolve($res);
     }
 
     /**
@@ -203,7 +203,7 @@ class ChannelClient extends AbstractClient
             'purpose' => $purpose
         ]];
         $res = $this->client->request('GET', $endpoint, $parameters);
-        return json_decode((string)$res->getBody());
+        return $this->resolve($res);
     }
 
     /**
@@ -220,7 +220,7 @@ class ChannelClient extends AbstractClient
             'topic' => $topic
         ]];
         $res = $this->client->request('GET', $endpoint, $parameters);
-        return json_decode((string)$res->getBody());
+        return $this->resolve($res);
     }
 
 
@@ -236,7 +236,7 @@ class ChannelClient extends AbstractClient
             'thread_ts' => $thread_ts
         ]];
         $res = $this->client->request('GET', $endpoint, $parameters);
-        return json_decode((string)$res->getBody());
+        return $this->resolve($res);
     }
 
     public function unarchive($channel){
@@ -246,7 +246,7 @@ class ChannelClient extends AbstractClient
             'channel' => $channel
         ]];
         $res = $this->client->request('GET', $endpoint, $parameters);
-        return json_decode((string)$res->getBody());
+        return $this->resolve($res);
     }
 
 }

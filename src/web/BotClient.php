@@ -16,6 +16,6 @@ class BotClient extends AbstractClient
         $parameters['query']['token'] = $this->token;
         if (!is_null($bot)) $parameters['query']['bot'] = $bot;
         $res = $this->client->request('GET', $endpoint, $parameters);
-        return json_decode((string)$res->getBody());
+        return $this->resolve($res);
     }
 }

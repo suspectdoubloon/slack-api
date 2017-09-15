@@ -17,7 +17,7 @@ class ChatClient extends AbstractClient
         ]];
         if (!is_null($as_user)) $parameters['query']['as_user'] = $as_user;
         $res = $this->client->request('GET', $endpoint, $parameters);
-        return json_decode((string)$res->getBody());
+        return $this->resolve($res);
     }
 
     public function meMessage($channel, $text)
@@ -29,7 +29,7 @@ class ChatClient extends AbstractClient
             'text' => $text
         ]];
         $res = $this->client->request('GET', $endpoint, $parameters);
-        return json_decode((string)$res->getBody());
+        return $this->resolve($res);
     }
 
     /**
@@ -48,7 +48,7 @@ class ChatClient extends AbstractClient
         ];
         $query = array_merge($query, $options);
         $res = $this->client->request('GET', $endpoint, ['query' => $query]);
-        return json_decode((string)$res->getBody());
+        return $this->resolve($res);
     }
 
     /**
@@ -69,6 +69,6 @@ class ChatClient extends AbstractClient
         ];
         $query = array_merge($query, $options);
         $res = $this->client->request('GET', $endpoint, ['query' => $query]);
-        return json_decode((string)$res->getBody());
+        return $this->resolve($res);
     }
 }

@@ -16,7 +16,7 @@ class GroupClient extends ChannelClient {
             'channel' => $channel
         ]];
         $res = $this->client->request('GET', $endpoint, $parameters);
-        return json_decode((string)$res->getBody());
+        return $this->resolve($res);
     }
 
     /**
@@ -38,7 +38,7 @@ class GroupClient extends ChannelClient {
             'channel' => $channel
         ]];
         $res = $this->client->request('GET', $endpoint, $parameters);
-        return json_decode((string)$res->getBody());
+        return $this->resolve($res);
     }
 
     /**
@@ -52,6 +52,6 @@ class GroupClient extends ChannelClient {
             'channel' => $channel
         ]];
         $res = $this->client->request('GET', $endpoint, $parameters);
-        return json_decode((string)$res->getBody());
+        return $this->resolve($res);
     }
 }

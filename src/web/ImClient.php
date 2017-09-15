@@ -20,7 +20,7 @@ class ImClient extends AbstractClient
             'channel' => $channel
         ]];
         $res = $this->client->request('GET', $endpoint, $parameters);
-        return json_decode((string)$res->getBody());
+        return $this->resolve($res);
     }
 
     /**
@@ -46,7 +46,7 @@ class ImClient extends AbstractClient
             'unreads' => $unreads
         ]];
         $res = $this->client->request('GET', $endpoint, $parameters);
-        return json_decode((string)$res->getBody());
+        return $this->resolve($res);
     }
 
     /**
@@ -60,7 +60,7 @@ class ImClient extends AbstractClient
             'token' => $this->token
         ]];
         $res = $this->client->request('GET', $endpoint, $parameters);
-        return json_decode((string) $res->getBody());
+        return $this->resolve($res);
     }
 
     /**
@@ -78,7 +78,7 @@ class ImClient extends AbstractClient
             'ts' => $ts
         ]];
         $res = $this->client->request('GET', $endpoint, $parameters);
-        return json_decode((string) $res->getBody());
+        return $this->resolve($res);
     }
 
     /**
@@ -93,6 +93,6 @@ class ImClient extends AbstractClient
         $parameters['query']['user'] = $user;
         if(!is_null($return_im)) $parameters['query']['return_im'] = $return_im;
         $res = $this->client->request('GET', $endpoint, $parameters);
-        return json_decode((string) $res->getBody());
+        return $this->resolve($res);
     }
 }

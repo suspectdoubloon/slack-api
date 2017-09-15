@@ -15,6 +15,6 @@ class ApiClient extends AbstractClient{
             $parameters['query'][$extra] = '';
         }
         $res = $this->client->request('GET', $endpoint, $parameters);
-        return json_decode((string) $res->getBody());
+        return $this->resolve($res);
     }
 }

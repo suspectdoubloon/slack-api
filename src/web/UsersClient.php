@@ -15,7 +15,7 @@ class UsersClient extends AbstractClient{
         $endpoint = $this->endpoint . '.deletePhoto';
         $parameters['query']['token'] = $this->token;
         $res = $this->client->request('GET', $endpoint, $parameters);
-        return json_decode((string) $res->getBody());
+        return $this->resolve($res);
     }
 
     /**
@@ -30,7 +30,7 @@ class UsersClient extends AbstractClient{
             'user' => $user
         ]];
         $res = $this->client->request('GET', $endpoint, $parameters);
-        return json_decode((string) $res->getBody());
+        return $this->resolve($res);
     }
 
     /**
@@ -41,7 +41,7 @@ class UsersClient extends AbstractClient{
         $endpoint = $this->endpoint . '.identity';
         $parameters['query']['token'] = $this->token;
         $res = $this->client->request('GET', $endpoint, $parameters);
-        return json_decode((string) $res->getBody());
+        return $this->resolve($res);
     }
 
     /**
@@ -56,7 +56,7 @@ class UsersClient extends AbstractClient{
             'user' => $user
         ]];
         $res = $this->client->request('GET', $endpoint, $parameters);
-        return json_decode((string) $res->getBody());
+        return $this->resolve($res);
     }
 
     /**
@@ -73,8 +73,7 @@ class UsersClient extends AbstractClient{
             $parameters['query']['presence'] = $presence;
         }
         $res = $this->client->request('GET', $endpoint, $parameters);
-        $result = json_decode((string) $res->getBody());
-        return $result;
+        return $this->resolve($res);
     }
 
     /**
@@ -85,7 +84,7 @@ class UsersClient extends AbstractClient{
         $endpoint = $this->endpoint . '.setActive';
         $parameters['query']['token'] = $this->token;
         $res = $this->client->request('GET', $endpoint, $parameters);
-        return json_decode((string) $res->getBody());
+        return $this->resolve($res);
     }
 
     /**
@@ -128,7 +127,7 @@ class UsersClient extends AbstractClient{
             ];
         }
         $res = $this->client->request('POST', $endpoint, $parameters);
-        return json_decode((string) $res->getBody());
+        return $this->resolve($res);
     }
 
     /**
@@ -143,6 +142,6 @@ class UsersClient extends AbstractClient{
             'presence' => $presence
         ]];
         $res = $this->client->request('GET', $endpoint, $parameters);
-        return json_decode((string) $res->getBody());
+        return $this->resolve($res);
     }
 }
